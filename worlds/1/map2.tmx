@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="270" height="25" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" name="tilesetjuego" tilewidth="32" tileheight="32" spacing="2" margin="1">
+  <image source="tilesetjuego.png" trans="ff00ff" width="816" height="408"/>
+ </tileset>
+ <objectgroup name="Capa de Objetos 1" width="270" height="25"/>
+ <layer name="platform" width="270" height="25">
+  <data encoding="base64" compression="zlib">
+   eJzt3FGKwkAQBNCop1Dvf08DQz6DDdOZzgzvQX0GpLBrFxG3DQAAAIAVPfY8O/Ma/qpr6Aqa955PZ77DX3UNXbGK3r+BbiFOV6yi973sFuJ0xSrsxji6YhV2YxxdsQq7EeezIGjsRpyuoHELcbqCxi3E6QoatxCnK3plfGf4DnELcbqiV8Z74A65yy1U76eNZQS7kXsL1T3M1BXzshu5t1Ddw0xdMS+7kXsL1T3M1BXzshu5t1Ddw0xdVX/OI/9z9jspdiP3Fqp70JVk5uz/QruR8/zRcXUPupLM2I1rnz86ru5BV5IZu3Ht80fH1T3oSjJz7MYPDGz5IA==
+  </data>
+ </layer>
+ <layer name="muerte" width="270" height="25">
+  <data encoding="base64" compression="zlib">
+   eJzt2cENgCAQBEB+lkEZ9t+ZT3hAwkUjmpup4OSxLGcpAAAAAAAAAMAXHLsHAH6n7h4A+KxZrzhfnQLQ8YEoHR+ek+UeXs2NLOcBd2S5h1e/M8t5QFR/p2bZtY3yYNQt5AbkE/kXMcqILDm6i3cgEKXPAVEruaGTAL1Zbhyl5YVOAvRm+6NaWl7YMQEAAAAAcAEM+gNw
+  </data>
+ </layer>
+ <layer name="fondo" width="270" height="25">
+  <data encoding="base64" compression="zlib">
+   eJzt3LENwCAMAEEmZIzsE1g4I1A4sgXcLeCvXFiI1gAAADjJWx2wsVEdAAAAAAAAAAAAAIT06gAgXfT99PNLxdpMmgNwG/sVAAAAYA+Zdxx/rwAAAAAA3OMDhSYEsw==
+  </data>
+ </layer>
+ <layer name="flag" width="270" height="25">
+  <data encoding="base64" compression="zlib">
+   eJztzkkNhFAABUEMMMB4YPXA6l8U74SFD0lV0veuKgAAAAAAAAAAAAAAAAAAAAAAAPiWOv1Sk9rUpX/RI+Dt+jSkMU1pTkvRI+Dt1rSlPR3pTFfJIQAAAAAAHje8sQLI
+  </data>
+ </layer>
+ <layer name="efecto" width="270" height="25">
+  <data encoding="base64" compression="zlib">
+   eJztwQENAAAAwqD3T20ON6AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD4MaXgAAQ==
+  </data>
+ </layer>
+</map>
