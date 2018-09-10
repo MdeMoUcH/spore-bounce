@@ -165,7 +165,7 @@ end
 function gui:update_puntuaciones()
 
 	tiempo_de_inicio = os.difftime(os.time(),start_time)
-	if tiempo_de_inicio >= 1 and (love.keyboard.isDown(' ') or love.keyboard.isDown('escape') or joystick:isGamepadDown("start") or joystick:isGamepadDown("a") or joystick:isGamepadDown("b")) then
+	if tiempo_de_inicio >= 1 and (love.keyboard.isDown('space') or love.keyboard.isDown('escape') or joystick:isGamepadDown("start") or joystick:isGamepadDown("a") or joystick:isGamepadDown("b")) then
 		start_time = os.time()
 		estado_juego = "menu"
 	end
@@ -252,7 +252,7 @@ function gui:update_menu(dt)
 		repeat_timer = 0
 	end
 	
-	if (love.keyboard.isDown('return') or love.keyboard.isDown(' ') or joystick:isGamepadDown("a")) and tiempo_de_inicio >= 1 then
+	if (love.keyboard.isDown('return') or love.keyboard.isDown('space') or joystick:isGamepadDown("a")) and tiempo_de_inicio >= 1 then
 	
 		if flecha_posicion == 0 then 
 			--CONTINUAR
@@ -412,7 +412,7 @@ function gui:update_pausa(dt)
 		end
 	end
 	
-	if love.keyboard.isDown(' ') then
+	if love.keyboard.isDown('space') then
 		start_time = os.time()
 		estado_juego = "jugando"
 	end
@@ -488,7 +488,7 @@ function gui:update_opciones(dt)
 
 	tiempo_de_inicio = os.difftime(os.time(),start_time)
 	
-	b_press_key = (love.keyboard.isDown('return') or love.keyboard.isDown(' ') or joystick:isGamepadDown("a")) and tiempo_de_inicio >= 1
+	b_press_key = (love.keyboard.isDown('return') or love.keyboard.isDown('space') or joystick:isGamepadDown("a")) and tiempo_de_inicio >= 1
 	
 	
 	if tiempo_de_inicio >= 1 and love.keyboard.isDown('escape') then
@@ -731,7 +731,7 @@ function gui:update_menu_level(dt)
 
 	tiempo_de_inicio = os.difftime(os.time(),start_time)
 	
-	b_press_key = (love.keyboard.isDown('return') or love.keyboard.isDown(' ') or joystick:isGamepadDown("a")) and tiempo_de_inicio >= 1
+	b_press_key = (love.keyboard.isDown('return') or love.keyboard.isDown('space') or joystick:isGamepadDown("a")) and tiempo_de_inicio >= 1
 	
 	
 	if tiempo_de_inicio >= 1 and love.keyboard.isDown('escape') then

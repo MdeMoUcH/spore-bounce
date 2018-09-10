@@ -157,7 +157,7 @@ function love.update(dt)
 		---------
 		
 		tiempo_de_inicio = os.difftime(os.time(),start_time)
-		if tiempo_de_inicio >= 5 or love.keyboard.isDown('return') or love.keyboard.isDown(' ') or love.keyboard.isDown('escape') or joystick:isGamepadDown("a") or joystick:isGamepadDown("start") then
+		if tiempo_de_inicio >= 5 or love.keyboard.isDown('return') or love.keyboard.isDown('space') or love.keyboard.isDown('escape') or joystick:isGamepadDown("a") or joystick:isGamepadDown("start") then
 			continue()
 			estado_juego = "menu"
 			sonidos.music:play()

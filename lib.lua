@@ -162,12 +162,14 @@ end
 file_extension = ".sav"
 
 function exist_file(name)
-	return love.filesystem.exists(name..file_extension)
+	--return love.filesystem.getInfo(name..file_extension)
+	return love.filesystem.getInfo(name..file_extension)
 end
 
 function save_data(data, name)
 	--s_debug = love.filesystem.getSaveDirectory()
-	if love.filesystem.exists(name..file_extension) == false then
+	--if love.filesystem.exists(name..file_extension) == false then
+	if love.filesystem.getInfo(name..file_extension) == false then
 		love.filesystem.newFile(name..file_extension)
 	end
 	
@@ -175,7 +177,7 @@ function save_data(data, name)
 end
 
 function load_data(name)
-	if love.filesystem.exists(name..file_extension) then
+	if love.filesystem.getInfo(name..file_extension) then
 		chunk = love.filesystem.load(name..file_extension)
 		chunk()
 		
@@ -193,7 +195,8 @@ function cargar_ventana()
 	ventana.height = options.height
 	love.window.setMode(ventana.width, ventana.height) 
 	if options.fullscreen then
-		love.window.setFullscreen(true, "normal")--Para poner en pantalla completa
+		--love.window.setFullscreen(true, "normal")--Para poner en pantalla completa
+		love.window.setFullscreen(true, "exclusive")--Para poner en pantalla completa
 		width, height, flags = love.window.getMode()
 		if ventana.width ~= width or ventana.height ~= height then
 			ventana.width = width
@@ -220,10 +223,10 @@ function cargar_sonidos()
 	sonidos.salto = love.audio.newSource("sounds/jump.mp3", "static")
 	sonidos.salto:setVolume(options.volumen_sonidos)
 	
-	sonidos.start = love.audio.newSource("sounds/start.mp3")
+	sonidos.start = love.audio.newSource("sounds/start.mp3", "static")
 	sonidos.start:setVolume(options.volumen_musica)
 	
-	sonidos.music = love.audio.newSource("sounds/music.mp3")
+	sonidos.music = love.audio.newSource("sounds/music.mp3", "static")
 	sonidos.music:setVolume(options.volumen_musica)
 	sonidos.music:setLooping(true)
 
@@ -342,7 +345,7 @@ function pantalla_completa()
 	
 	
 	
-	if love.keyboard.isDown(' ') or joystick:isGamepadDown("start") then
+	if love.keyboard.isDown('space') or joystick:isGamepadDown("start") then
 		if b_single_match then
 			start_time = os.time()
 			estado_juego = "menu-nivel"
