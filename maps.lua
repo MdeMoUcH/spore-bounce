@@ -66,13 +66,13 @@ function mapa:cargar_mundo(i_mundo)
 	mundo.fondo.height = 1080
 	mundo.fondo.color = {}
 	mundo.fondo.color.bottom = {}
-	mundo.fondo.color.bottom.r = 91
-	mundo.fondo.color.bottom.g = 56
-	mundo.fondo.color.bottom.b = 31
+	mundo.fondo.color.bottom.r = 91/255
+	mundo.fondo.color.bottom.g = 56/255
+	mundo.fondo.color.bottom.b = 31/255
 	mundo.fondo.color.top = {}
-	mundo.fondo.color.top.r = 1
-	mundo.fondo.color.top.g = 23
-	mundo.fondo.color.top.b = 108
+	mundo.fondo.color.top.r = 1/255
+	mundo.fondo.color.top.g = 23/255
+	mundo.fondo.color.top.b = 108/255
 	
 	mundo.halo_pos = 0
 	mundo.efecto = 1
