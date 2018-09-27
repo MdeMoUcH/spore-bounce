@@ -70,9 +70,9 @@ function mapa:cargar_mundo(i_mundo)
 	mundo.fondo.color.bottom.g = 56/255
 	mundo.fondo.color.bottom.b = 31/255
 	mundo.fondo.color.top = {}
-	mundo.fondo.color.top.r = 1/255
-	mundo.fondo.color.top.g = 23/255
-	mundo.fondo.color.top.b = 108/255
+	mundo.fondo.color.top.r = 0/255
+	mundo.fondo.color.top.g = 26/255
+	mundo.fondo.color.top.b = 39/255
 	
 	mundo.halo_pos = 0
 	mundo.efecto = 1
