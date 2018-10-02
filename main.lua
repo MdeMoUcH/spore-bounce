@@ -66,7 +66,7 @@ function love.load()
 	
 	--configuración niveles:
 	mundo_actual = 1
-	total_mundos = 2
+	total_mundos = 1
 	level = 1
 	total_levels = 1 --se actualiza en el restart game
 	

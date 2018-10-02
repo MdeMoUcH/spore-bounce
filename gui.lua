@@ -43,25 +43,25 @@ end ]]--
 
 --GUI IN-GAME
 function gui:pintar_ingame()
-	
+--[[
+		if win_flag then
+			love.graphics.setFont(font_small)
+			love.graphics.setColor(255, 255, 255)
+			love.graphics.draw(imagenes.win, ventana.width/2-225, ventana.height/2-75)
+			love.graphics.print("En "..tiempo_actual.." segundos\n\nPulsa 'Espacio' para\n continuar", ventana.width/2-100, ventana.height/2+40)
 			
-	if win_flag then
-		love.graphics.setFont(font_small)
-		love.graphics.setColor(255, 255, 255)
-		love.graphics.draw(imagenes.win, ventana.width/2-225, ventana.height/2-75)
-		love.graphics.print("En "..tiempo_actual.." segundos\n\nPulsa 'Espacio' para\n continuar", ventana.width/2-100, ventana.height/2+40)
-		
-		if b_record then
-			love.graphics.print("NUEVO\nRECORD", ventana.width/2-100, ventana.height/2-100)
+			if b_record then
+				love.graphics.print("NUEVO\nRECORD", ventana.width/2-100, ventana.height/2-100)
+			end
 		end
-	end
+]]--
 
 	love.graphics.setFont(font_small)
 	love.graphics.setColor(0, 0, 0)
 	
 	s_interface = "FPS: "..love.timer.getFPS().."\n"
 				--.."Velocidad: "..math.floor(character.velocidad_real).."\n"
-			
+				.."mdemouch@gmail.com"
 	love.graphics.print(s_interface, 10, 10)
 	--love.graphics.print(mensaje, ventana.width-200, 10)
 	
@@ -71,8 +71,7 @@ function gui:pintar_ingame()
 	end
 	
 	if win_flag and level == total_levels and b_single_match == false then
-		love.graphics.setColor(0, 0, 0)
-		love.graphics.setFont(font_big)
+	
 		i_total = 0
 		s_win = "TE HAS PASADO TODOS LOS NIVELES\n"
 		for i=1, total_levels, 1 do
@@ -86,8 +85,41 @@ function gui:pintar_ingame()
 			s_win = s_win.."\nNUEVO\nRECORD"
 		end
 		
-		love.graphics.print(s_win, ventana.width/3, 10)
+		s_win = s_win.."\n\nPulsa 'Espacio' para\n continuar"
+		
+		love.graphics.setFont(font_big)
+		love.graphics.setColor(0, 0, 0, 0.5)
+		if ventana.width > 1280 then
+			love.graphics.rectangle("fill", ventana.width/6, 5, ventana.width/6*4, ventana.height-10)
+			love.graphics.setColor(1, 1, 1)
+			love.graphics.print(s_win, ventana.width/3, 10)
+		else
+			love.graphics.rectangle("fill", ventana.width/6, 5, ventana.width/6*4, ventana.height-10)
+			love.graphics.setColor(1, 1, 1)
+			love.graphics.print(s_win, ventana.width/5, 10)
+		end
+		
 	else
+		
+		if win_flag then
+			love.graphics.setColor(0, 0, 0, 0.5)
+			if ventana.width > 1280 then
+				love.graphics.rectangle("fill", ventana.width/2-450, ventana.height/3, 480, 450)
+			else
+				love.graphics.rectangle("fill", ventana.width/2-250, ventana.height/3, 480, 300)
+			end
+			
+			love.graphics.setFont(font_small)
+			love.graphics.setColor(255, 255, 255)
+			love.graphics.draw(imagenes.win, ventana.width/2-225, ventana.height/2-75)
+			love.graphics.print("En "..tiempo_actual.." segundos\n\nPulsa 'Espacio' para\n continuar", ventana.width/2-100, ventana.height/2+40)
+			
+			if b_record then
+				love.graphics.print("NUEVO\nRECORD", ventana.width/2-100, ventana.height/2-100)
+			end
+		end
+	
+	
 		love.graphics.setColor(255, 255, 255)
 		love.graphics.draw(imagenes.hud, ventana.width/2-90, 0)
 		love.graphics.setColor(0, 67, 0)
@@ -106,6 +138,10 @@ function gui:pintar_ingame()
 		
 	end
 	love.graphics.setColor(255, 255, 255)
+	
+	love.graphics.setFont(font_small)
+	s_mdem = "mdemouch@gmail.com"
+	love.graphics.print(s_mdem, ventana.width/2-120, ventana.height-32)
 end
 
 
@@ -134,7 +170,8 @@ end
 function gui:pintar_puntuaciones()
 	---------
 	--PUNTUACIONES
-	---------	
+	---------
+	
 	love.graphics.setBackgroundColor(0, 0, 0)
 	love.graphics.setColor(255, 255, 255)
 	love.graphics.setFont(font_big)
@@ -449,7 +486,7 @@ end
 
 function gui:pintar_pausa()
 
-	love.graphics.setColor(0, 0, 0)
+	love.graphics.setColor(0, 0, 0, 0.5)
 	if ventana.width > 1280 then
 		love.graphics.rectangle( "fill", ventana.width/2-750/2, ventana.height/2-500/2, 650, 360 )
 	else
@@ -694,11 +731,11 @@ function gui:pintar_opciones()
 	
 	
 	if b_guardado then
-		love.graphics.setColor(0, 0, 0)
+		love.graphics.setColor(0, 0, 0, 0.9)
 		if ventana.width > 1280 then
-			love.graphics.rectangle( "fill", ventana.width/2-750/2, ventana.height/2-500/2, 650, 360 )
+			love.graphics.rectangle( "fill", ventana.width/2-750/2, ventana.height/2-500/2, 750, 500 )
 		else
-			love.graphics.rectangle( "fill", ventana.width/2-500/2, ventana.height/2-400/2, 500, 280 )
+			love.graphics.rectangle( "fill", ventana.width/2-500/2, ventana.height/2-400/2, 720, 500 )
 		end
 		
 		love.graphics.setColor(255, 255, 255)
@@ -709,7 +746,7 @@ function gui:pintar_opciones()
 		love.graphics.setFont(font_super)
 		love.graphics.print("Cambios salvados\ncorrectamente", ventana.width/4+150, ventana.height/3)
 		love.graphics.setFont(font_subtitle)
-		love.graphics.print("Aceptar (espacio)", ventana.width/4+150, ventana.height/2)
+		love.graphics.print("Aceptar (espacio)", ventana.width/4+150, ventana.height/3+200)
 	end
 	
 end
