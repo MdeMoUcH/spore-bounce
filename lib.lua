@@ -196,13 +196,13 @@ function cargar_ventana()
 	love.window.setMode(ventana.width, ventana.height) 
 	if options.fullscreen then
 		--love.window.setFullscreen(true, "normal")--Para poner en pantalla completa
-		love.window.setFullscreen(true, "exclusive")--Para poner en pantalla completa
+		love.window.setFullscreen(true, "desktop")--Para poner en pantalla completa
 		width, height, flags = love.window.getMode()
 		if ventana.width ~= width or ventana.height ~= height then
 			ventana.width = width
 			ventana.height = height
 			love.window.setMode(ventana.width, ventana.height) 
-			love.window.setFullscreen(true, "normal")--Para poner en pantalla completa
+			love.window.setFullscreen(true, "desktop")--Para poner en pantalla completa
 		end
 	else
 		love.window.setFullscreen(false)
